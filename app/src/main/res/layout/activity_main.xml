@@ -20,6 +20,7 @@
         android:layout_marginEnd="20dp"
         app:cardUseCompatPadding="true"
         >
+        <!--User-->
         <LinearLayout
             android:id="@+id/protomlinear"
             android:visibility="visible"
@@ -47,7 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/log_in"
+                android:text="User"
                 android:paddingTop="5dp"
                 android:paddingRight="15dp"
                 android:paddingLeft="15dp"
@@ -65,7 +66,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/agent_login"
+                android:text="Agent"
                 android:paddingTop="5dp"
                 android:textAlignment="center"
                 android:paddingRight="15dp"
@@ -110,6 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
                         android:inputType="textPersonName|textEmailAddress"
                         android:textColor="@color/black"
 
@@ -143,6 +145,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/password"
+                        android:drawablePadding="10dp"
                         android:inputType="textPassword"
                         android:textColor="@color/black"
                         app:endIconMode="password_toggle"
@@ -164,11 +167,6 @@
                     />
 
             </LinearLayout>
-
-
-
-
-
 
 
 
@@ -196,10 +194,41 @@
 
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not yet registered?"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+
+                    />
+                <TextView
+                    android:id="@+id/signuplink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SignUp Now"
+                    android:textStyle="normal|bold"
+                    android:textColor="#1976D2"
+                    android:textSize="15sp"
+                    android:layout_marginStart="5dp"
+
+                    />
+
+            </LinearLayout>
 
 
+        </LinearLayout> <!--card view er vitore linear layout--> <!--eita holo user er jonno-->
 
-        </LinearLayout> <!--card view er vitore linear layout-->
+        <!--agent-->
         <LinearLayout
             android:id="@+id/duinumberlinear"
             android:orientation="vertical"
@@ -227,7 +256,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/log_in"
+                    android:text="User"
                     android:paddingTop="5dp"
                     android:paddingRight="15dp"
                     android:paddingLeft="15dp"
@@ -245,7 +274,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/agent_login"
+                    android:text="Agent"
                     android:paddingTop="5dp"
                     android:textAlignment="center"
                     android:paddingRight="15dp"
@@ -278,7 +307,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     app:shapeAppearanceOverlay="@style/Button1"
-                    android:hint="Email or Number"
+                    android:hint="Email"
                     app:boxStrokeColor="#4E4A4A"
                     app:boxStrokeWidth="1dp"
 
@@ -286,11 +315,11 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/email2"
-                        android:ems="10"
                         android:textSize="13sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
                         android:inputType="textPersonName|textEmailAddress"
                         android:textColor="@color/black"
 
@@ -324,6 +353,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/password"
+                        android:drawablePadding="10dp"
                         android:inputType="textPassword"
                         android:textColor="@color/black"
                         app:endIconMode="password_toggle"
@@ -374,7 +404,36 @@
 
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not yet registered?"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+
+                    />
+                <TextView
+                    android:id="@+id/agentersignup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SignUp Now"
+                    android:textStyle="normal|bold"
+                    android:textColor="#1976D2"
+                    android:textSize="15sp"
+                    android:layout_marginStart="5dp"
+
+                    />
+
+            </LinearLayout>
 
 
         </LinearLayout> <!--eita holo agent er linear-->
@@ -386,34 +445,7 @@
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Not yet registered?"
-        android:textAlignment="center"
-        android:textStyle="normal|bold"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-
-        />
-        <TextView
-            android:id="@+id/signuplink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SignUp Now"
-            android:textStyle="normal|bold"
-            android:textColor="#1976D2"
-            android:textSize="15sp"
-            android:layout_marginStart="5dp"
-            />
-
-    </LinearLayout>
 
 
 

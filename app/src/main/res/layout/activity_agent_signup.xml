@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbackground2">
+    android:background="@drawable/mainbackground2"
+    tools:context=".AgentSignup">
 
     <androidx.cardview.widget.CardView
         app:cardCornerRadius="25dp"
@@ -19,6 +21,7 @@
         >
 
         <LinearLayout
+            android:id="@+id/agent_ersignupid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -49,6 +52,7 @@
                 />
 
             <EditText
+                android:id="@+id/signname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -56,26 +60,56 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/register_edit_btn"
+                android:background="@drawable/agent_register_button"
                 android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawablePadding="10dp"
 
                 />
-
             <EditText
+                android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
+                android:inputType="number"
+                android:hint="Phone Number"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/agent_register_button"
+                android:drawableStart="@drawable/phone"
+                android:drawablePadding="10dp"
+                />
+            <EditText
+                android:id="@+id/nidnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="NID Number"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/agent_register_button"
+                android:drawableStart="@drawable/nid_24"
+                android:drawablePadding="10dp"
+
+                />
+
+            <EditText
+                android:id="@+id/signmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
                 android:hint="Email Address"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/register_edit_btn"
+                android:background="@drawable/agent_register_button"
                 android:drawableStart="@drawable/email_logo"
                 android:drawablePadding="10dp"
                 />
 
+
             <EditText
+                android:id="@+id/signpass2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -83,22 +117,11 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/register_edit_btn"
+                android:background="@drawable/agent_register_button"
                 android:drawableStart="@drawable/password"
                 android:drawablePadding="10dp"
                 />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="Confirm password"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/register_edit_btn"
-                android:drawableStart="@drawable/password"
-                android:drawablePadding="10dp"
-                />
+
 
 
             <TextView
@@ -115,6 +138,7 @@
 
 
             <android.widget.Button
+                android:id="@+id/registerbtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="REGISTER"
@@ -126,6 +150,18 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@drawable/forbutton"
+                />
+
+            <TextView
+                android:id="@+id/signupThekeLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log In?"
+                android:gravity="center"
+                android:textColor="@color/navyblue"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="13dp"
                 />
 
 

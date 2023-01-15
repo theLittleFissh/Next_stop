@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgentHome"
+    android:padding="15dp"
+    android:background="@drawable/agenthomebg2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="স্বাগতম"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:textColor="@color/darkred"
+            android:layout_marginTop="25sp"
+            android:layout_marginStart="95dp"
+            />
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="25dp"
+            app:cardElevation="15dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardUseCompatPadding="true"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+                <EditText
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Apartment Name"
+                    android:drawableStart="@drawable/ic_baseline_home_24"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/apartName"
+                    />
+
+                <EditText
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Address"
+                    android:drawableStart="@drawable/ic_baseline_add_location_alt_24"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/address"
+                    />
+
+                <EditText
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Room Available"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_event_available_24"
+                    android:id="@+id/roomavailable"
+                    />
+                <EditText
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Price"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_price_change_24"
+                    android:id="@+id/price"
+                    />
+
+                <EditText
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Contact Number"
+                    android:drawableStart="@drawable/phone"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/contactNumber"
+                    />
+
+
+
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/submitbtn"
+                    />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
