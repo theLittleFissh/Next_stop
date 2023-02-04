@@ -60,6 +60,7 @@ public class Agent_signup extends AppCompatActivity {
                 String agentpassword=agentPassword.getText().toString();
                 String agentpasswordconf=agentPasswordConf.getText().toString();
 
+
                 if(isEmpty(agentname))
                 {
                     agentName.setError("Cannot be empty");

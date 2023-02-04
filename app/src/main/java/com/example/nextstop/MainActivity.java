@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
                                     progressDialog.cancel();
-                                    Intent myintent = new Intent(MainActivity.this, AgentHome.class);
+                                    Intent myintent = new Intent(MainActivity.this, AgentFirstHome.class);
                                     startActivity(myintent);
                                     Toast.makeText(MainActivity.this, "Login Succesful", Toast.LENGTH_SHORT).show();
 
