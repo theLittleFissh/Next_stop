@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/advertisement"
+            android:layout_centerVertical="true"
+            app:civ_border_width="2dp"
+            android:id="@+id/img"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/img"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/nameText"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Room Available"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/img"
+            android:layout_below="@+id/nameText"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/roomText"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taka"
+            android:textSize="25sp"
+            android:textColor="#800"
+            android:layout_toRightOf="@+id/img"
+            android:layout_below="@id/roomText"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/takaText"
+            />
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

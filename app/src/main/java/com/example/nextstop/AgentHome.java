@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AgentHome extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class AgentHome extends AppCompatActivity {
     Button submit;
 
     FirebaseDatabase firebaseDatabase;
+    FirebaseFirestore firebaseFirestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

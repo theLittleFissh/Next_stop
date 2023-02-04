@@ -12,21 +12,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    TextView user,agent,usersignuplink,agentErsignup;
+    TextView user,agent,usersignuplink,agentErsignup,agentforgetpassword,userforgetpassword;
     LinearLayout protom,ditio,userlay,agentlay;
     TextInputEditText email,password,emailA,passwordA;
     Button login,loginA;
@@ -59,9 +58,11 @@ public class MainActivity extends AppCompatActivity {
         emailA=findViewById(R.id.email2);
         passwordA=findViewById(R.id.password2);
         loginA=findViewById(R.id.sign_in2);
+        agentforgetpassword=findViewById(R.id.agentForgetPassword);
+        userforgetpassword=findViewById(R.id.userForgetPassword);
 
         firebaseAuth=FirebaseAuth.getInstance();
-        progressDialog= new ProgressDialog(this);
+        progressDialog= new ProgressDialog(this);//loading sign
 
 
 
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         agentErsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,AgentSignup.class);
+                Intent intent=new Intent(MainActivity.this,Agent_signup.class);
                 startActivity(intent);
             }
         });
@@ -199,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                                     Intent myintent = new Intent(MainActivity.this, AgentHome.class);
                                     startActivity(myintent);
                                     Toast.makeText(MainActivity.this, "Login Succesful", Toast.LENGTH_SHORT).show();
+
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -211,6 +213,60 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //user er forget password er jonno
+        userforgetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String mail = email.getText().toString();
+                progressDialog.setTitle("Sending...");
+                progressDialog.show();
+
+
+                firebaseAuth.sendPasswordResetEmail(mail)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+
+                                progressDialog.cancel();
+                                Toast.makeText(MainActivity.this, "Check Your Email", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                progressDialog.cancel();
+                                Toast.makeText(MainActivity.this, "Sending Failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+            }
+        });
+
+
+        //agent er forget password
+
+        agentforgetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email=emailA.getText().toString();
+
+                firebaseAuth.sendPasswordResetEmail(email)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(MainActivity.this, "Check Your Email", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(MainActivity.this, "Sending Failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
 
 
 

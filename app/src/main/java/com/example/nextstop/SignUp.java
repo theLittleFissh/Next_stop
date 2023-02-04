@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nextstop.models.userModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -91,7 +92,8 @@ public class SignUp extends AppCompatActivity {
                                 }
                             });
 
-                }else {
+                }
+                else {
                     passwordgain.setError("Password Didn't Match");
                     passwordgain.requestFocus();
                     System.out.println("TestPass: "+pass);

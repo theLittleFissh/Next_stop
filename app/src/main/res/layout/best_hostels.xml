@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="15dp"
+    app:cardCornerRadius="15dp">
+
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+
+        >
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/best_hostels_img"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            app:riv_corner_radius="14dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/advertisement"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="4dp"
+            />
+        <TextView
+            android:id="@+id/best_hostels_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hostels"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/best_hostels_room"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Room Available"
+                android:textColor="@color/pinkcolor"
+                android:textStyle="bold"
+                android:textSize="18sp"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rooms Available"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textColor="@color/pinkcolor"
+                android:layout_marginLeft="5dp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/best_hostels_price"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Price"
+                android:textColor="#008000"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="৳"
+                android:textColor="#008000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+
+                />
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
