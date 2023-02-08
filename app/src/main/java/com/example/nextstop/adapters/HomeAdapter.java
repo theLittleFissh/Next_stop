@@ -19,12 +19,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel,HomeAdapter.myViewHolder> {
 
-    /**
-     * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
-     * {@link FirebaseRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
+
+
     public HomeAdapter(@NonNull FirebaseRecyclerOptions<HomeModel> options) {
 
         super(options);

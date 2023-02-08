@@ -15,6 +15,7 @@ public class AgentFirstHome extends AppCompatActivity {
         setContentView(R.layout.activity_agent_first_home);
 
         hostelCard=findViewById(R.id.hostel_card);
+        profileCard=findViewById(R.id.Profile_Card);
 
         hostelCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,6 +24,17 @@ public class AgentFirstHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        profileCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AgentFirstHome.this,Agent_Edit_Delete.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
 
 

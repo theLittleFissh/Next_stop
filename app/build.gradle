@@ -59,6 +59,10 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     //circluler image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //dialogplus
+    implementation 'com.orhanobut:dialogplus:1.11@aar'
+
 }
 
     apply plugin: 'com.google.gms.google-services'

@@ -15,6 +15,13 @@
         android:theme="@style/Theme.NextStop"
         tools:targetApi="31">
         <activity
+            android:name=".Agent_Edit_Delete"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AgentFirstHome"
             android:exported="false">
             <meta-data
