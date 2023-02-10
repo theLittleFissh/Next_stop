@@ -1,14 +1,16 @@
 package com.example.nextstop;
 
 public class userHelper {
-    String app,Mobile,Address,Room,Cost;
+    String app,Mobile,Address,Room,Cost,Img_link;
 
-    public userHelper(String app, String mobile, String address, String room, String cost) {
+
+    public userHelper(String app, String mobile, String address, String room, String cost, String img_link) {
         this.app = app;
         Mobile = mobile;
         Address = address;
         Room = room;
         Cost = cost;
+        Img_link = img_link;
     }
 
     public String getApp() {
@@ -50,4 +52,14 @@ public class userHelper {
     public void setCost(String cost) {
         Cost = cost;
     }
+
+    public String getImg_link() {
+        return Img_link;
+    }
+
+    public void setImg_link(String img_link) {
+        Img_link = img_link;
+    }
+
+
 }

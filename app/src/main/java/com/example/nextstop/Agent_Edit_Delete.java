@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.nextstop.adapters.EditAdapter;
 import com.example.nextstop.models.HomeModel;
@@ -17,6 +19,7 @@ public class Agent_Edit_Delete extends AppCompatActivity {
 
     RecyclerView recyclerView;
     EditAdapter editAdapter;
+    ImageView back_button;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -25,7 +28,16 @@ public class Agent_Edit_Delete extends AppCompatActivity {
         setContentView(R.layout.activity_agent_edit_delete);
         recyclerView = (RecyclerView) findViewById(R.id.rv2);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //backButton er kaj
+        back_button=findViewById(R.id.backButton);
 
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        //Back Button er kaj
 
         FirebaseRecyclerOptions<HomeModel> options =
                 new FirebaseRecyclerOptions.Builder<HomeModel>()
