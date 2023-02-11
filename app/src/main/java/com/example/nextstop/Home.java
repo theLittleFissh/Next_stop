@@ -32,6 +32,7 @@ public class Home extends AppCompatActivity {
                         .build();
 
         homeAdapter=new HomeAdapter(options);
+
         recyclerView.setAdapter(homeAdapter);
     }
 
