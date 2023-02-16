@@ -150,7 +150,7 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel,HomeAdapter.m
 }
 
 
-///bal
+
 //class MyViewHolder extends RecyclerView.ViewHolder{
 //
 //    ImageView img;

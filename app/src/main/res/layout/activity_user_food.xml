@@ -4,16 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home"
-
-    >
-
-
-
+    tools:context=".user_food">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv1"
+        android:id="@+id/food_RV3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -33,7 +28,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:id="@+id/userfoodbutton"
+            android:background="@drawable/switch_track_left"
+            android:id="@+id/userfoodfood"
             >
 
             <ImageView
@@ -49,6 +45,7 @@
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 />
 
         </LinearLayout>
@@ -58,8 +55,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@drawable/switch_track_fillup"
-            android:id="@+id/userhomebutton"
+            android:id="@+id/userhomehome"
+
             >
 
             <ImageView
@@ -76,7 +73,7 @@
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+
 
                 />
 
@@ -88,7 +85,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:id="@+id/usermorebutton"
+            android:id="@+id/usermoremore"
             >
 
             <ImageView
@@ -116,6 +113,8 @@
 
 
     </LinearLayout>
+
+
 
 
 

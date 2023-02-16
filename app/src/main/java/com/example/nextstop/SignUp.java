@@ -5,6 +5,7 @@ import static android.text.TextUtils.isEmpty;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,11 +22,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignUp extends AppCompatActivity {
-    EditText userName,userEmail,password,passwordgain;
+    EditText userName,userEmail,password,passwordgain,userMobile;
     Button reg;
     TextView login;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class SignUp extends AppCompatActivity {
         userEmail=findViewById(R.id.signmail);
         password=findViewById(R.id.signpass);
         passwordgain=findViewById(R.id.signpass2);
+        userMobile=findViewById(R.id.signmobile);
 
         reg=findViewById(R.id.registerbtn);
         login=findViewById(R.id.signupThekeLogin);
@@ -50,6 +53,7 @@ public class SignUp extends AppCompatActivity {
                 String email=userEmail.getText().toString().trim();
                 String pass=password.getText().toString();
                 String conpass=passwordgain.getText().toString();
+                String phone=userMobile.getText().toString();
 
                 if(isEmpty(fullname))
                 {
@@ -57,6 +61,11 @@ public class SignUp extends AppCompatActivity {
                     userName.requestFocus();
                 }
                 else if (isEmpty(email))
+                {
+                    userEmail.setError("Cannot be empty");
+                    userEmail.requestFocus();
+                }
+                else if (isEmpty(phone))
                 {
                     userEmail.setError("Cannot be empty");
                     userEmail.requestFocus();
@@ -73,7 +82,7 @@ public class SignUp extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
                                     firebaseFirestore.collection("Users").document(FirebaseAuth.getInstance().getUid())
-                                            .set(new userModel(fullname,email));
+                                            .set(new userModel(fullname,email,phone));
 
                                     Intent myintent= new Intent(SignUp.this,MainActivity.class);
                                     startActivity(myintent);

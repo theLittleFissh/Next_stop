@@ -81,6 +81,20 @@
                 />
 
             <EditText
+                android:id="@+id/signmobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Mobile Number"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/register_edit_btn"
+                android:drawableStart="@drawable/email_logo"
+                android:drawablePadding="10dp"
+                />
+
+            <EditText
                 android:id="@+id/signpass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
