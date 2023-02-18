@@ -17,6 +17,7 @@ public class AgentFirstHome extends AppCompatActivity {
         hostelCard=findViewById(R.id.hostel_card);
         profileCard=findViewById(R.id.Profile_Card);
         orderCard=findViewById(R.id.Order_Card);
+        foodCard=findViewById(R.id.Food_Card);
 
         hostelCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,14 +32,27 @@ public class AgentFirstHome extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(AgentFirstHome.this,Agent_Edit_Delete.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         orderCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AgentFirstHome.this,agent_order_list.class);
+                Intent intent=new Intent(AgentFirstHome.this,agent_order_hostels.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        foodCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(AgentFirstHome.this,Agent_food_input.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 

@@ -1,14 +1,32 @@
 package com.example.nextstop;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class agent_order_hostels extends AppCompatActivity {
 
+    CardView hostelbooking;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agent_order_hostels);
+
+
+        hostelbooking=findViewById(R.id.hostel_order_cardclick);
+        hostelbooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(agent_order_hostels.this,agent_order_list.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

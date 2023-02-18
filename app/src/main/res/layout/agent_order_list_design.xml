@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="160dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_margin="15dp">
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="14dp"
+    android:layout_marginEnd="15dp"
+    android:background="@color/black"
+
+    >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        app:cardCornerRadius="10dp"
+        android:layout_height="160dp"
+        app:cardCornerRadius="12dp"
         app:cardElevation="5dp"
+
+
         >
 
         <LinearLayout
@@ -85,15 +92,14 @@
 
         </LinearLayout>
 
-
-
-
-
-
-
-
-
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            android:layout_marginTop="110dp"
+            android:layout_marginStart="135dp"
+            android:id="@+id/order_confirm_button"
+            />
 
     </androidx.cardview.widget.CardView>
 

@@ -18,6 +18,13 @@
         android:theme="@style/Theme.NextStop"
         tools:targetApi="31">
         <activity
+            android:name=".Agent_food_input"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".agent_order_hostels"
             android:exported="false">
             <meta-data
