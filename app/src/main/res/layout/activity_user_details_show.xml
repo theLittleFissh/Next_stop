@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:text="Room Available: "
             android:textSize="20sp"
+            android:textStyle="bold"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -62,6 +63,7 @@
             android:layout_height="wrap_content"
             android:text="Address: "
             android:textSize="20sp"
+            android:textStyle="bold"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -85,6 +87,7 @@
             android:layout_height="wrap_content"
             android:text="Contact: "
             android:textSize="20sp"
+            android:textStyle="bold"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -96,6 +99,48 @@
             />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Des"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"
+                android:id="@+id/details_des"
+                android:maxLines="200"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">

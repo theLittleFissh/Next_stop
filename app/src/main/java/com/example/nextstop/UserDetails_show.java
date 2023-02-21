@@ -3,6 +3,7 @@ package com.example.nextstop;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +33,7 @@ public class UserDetails_show extends AppCompatActivity {
         ImageView img = findViewById(R.id.details_img);
         TextView Name = findViewById(R.id.details_Name);
         TextView Room = findViewById(R.id.details_Room);
-//        TextView sfa = findViewById(R.id.fetchAofSrudy);
+        TextView Description=findViewById(R.id.details_des);
 //        TextView  Email = findViewById(R.id.festhEmail);
         TextView  Mobile = findViewById(R.id.details_mobile);
         TextView Address = findViewById(R.id.details_Address);
@@ -44,6 +45,7 @@ public class UserDetails_show extends AppCompatActivity {
         String mobile = getIntent().getExtras().getString("mobile","defaultKey");
         String address = getIntent().getExtras().getString("address","defaultKey");
         String picurl = getIntent().getExtras().getString("pic","defaultKey");
+        String description = getIntent().getExtras().getString("description","defaultKey");
 
 
 
@@ -55,6 +57,7 @@ public class UserDetails_show extends AppCompatActivity {
 //        Email.setText(email);
         Mobile.setText(mobile);
         Address.setText(address);
+        Description.setText(description);
         Glide.with(UserDetails_show.this).load(picurl).into(img);
 
         //booking korar kaj

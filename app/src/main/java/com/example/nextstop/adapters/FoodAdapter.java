@@ -1,5 +1,7 @@
 package com.example.nextstop.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.nextstop.Payment_Proces;
 import com.example.nextstop.R;
 import com.example.nextstop.models.FoodModel;
 import com.example.nextstop.models.HomeModel;
@@ -40,6 +43,16 @@ public class FoodAdapter extends FirebaseRecyclerAdapter<FoodModel,FoodAdapter.m
                 .error(com.google.android.gms.base.R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.food_img);
 
+
+        holder.food_orderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent=new Intent(context,Payment_Proces.class);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @NonNull
@@ -67,9 +80,14 @@ public class FoodAdapter extends FirebaseRecyclerAdapter<FoodModel,FoodAdapter.m
             food_img= (CircleImageView) itemView.findViewById(R.id.food_img);
             food_name=(TextView) itemView.findViewById(R.id.user_food_name_);
             food_price=(TextView) itemView.findViewById(R.id.user_food_price);
+            food_orderButton=(Button) itemView.findViewById(R.id.user_food_order);
 
 
             viewLayout=(View)itemView.findViewById(R.id.clickable_recyclerView);
+
+
+
+
         }
     }
 }

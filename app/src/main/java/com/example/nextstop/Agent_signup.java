@@ -20,6 +20,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Agent_signup extends AppCompatActivity {
 
     EditText agentName,agentEmail,agentPhone,agentNid,agentPassword,agentPasswordConf;
@@ -61,6 +64,22 @@ public class Agent_signup extends AppCompatActivity {
                 String agentpasswordconf=agentPasswordConf.getText().toString();
 
 
+                //regx
+
+
+                String phoneRegex = "^(?:\\+88|88)?01[3-9]\\d{8}$";
+                Pattern pattern = Pattern.compile(phoneRegex);
+                Matcher matcher = pattern.matcher(agentphone);
+
+
+
+
+                //regx sesh
+
+
+
+
+
                 if(isEmpty(agentname))
                 {
                     agentName.setError("Cannot be empty");
@@ -74,6 +93,11 @@ public class Agent_signup extends AppCompatActivity {
                 else if(isEmpty(agentphone))
                 {
                     agentPhone.setError("Cannot be empty");
+                    agentPhone.requestFocus();
+                }
+                else if (!matcher.matches()) {
+                    // Not a valid number
+                    agentPhone.setError("Not a valid number");
                     agentPhone.requestFocus();
                 }
                 else if(isEmpty(agentnid))

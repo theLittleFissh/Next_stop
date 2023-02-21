@@ -86,11 +86,12 @@
                     android:layout_marginEnd="25dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
+                    android:inputType="numberDecimal"
                     android:hint="Price"
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/ic_baseline_price_change_24"
                     android:id="@+id/price"
+
                     />
 
                 <EditText
@@ -99,11 +100,24 @@
                     android:layout_marginEnd="25dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
+                    android:inputType="phone"
                     android:hint="Contact Number"
                     android:drawableStart="@drawable/phone"
                     android:drawablePadding="10dp"
                     android:id="@+id/contactNumber"
+                    />
+                <EditText
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:inputType="textLongMessage"
+                    android:hint="Description"
+                    android:drawableStart="@drawable/ic_baseline_description_24"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/hostel_descriptions"
+                    android:maxLines="200"
                     />
 
                     <LinearLayout
@@ -115,7 +129,17 @@
                         android:weightSum="2"
                         android:layout_marginTop="10dp"
                         >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Upload
 
+                            Photos"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textSize="25sp"
+                            />
 
 
                         <ImageView

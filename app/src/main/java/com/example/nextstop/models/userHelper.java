@@ -1,15 +1,19 @@
-package com.example.nextstop;
+package com.example.nextstop.models;
 
 public class userHelper {
-    String app,Mobile,Address,Room,Cost,Img_link;
+    String app,Mobile,Address,Room,Cost,Description,Img_link;
 
 
-    public userHelper(String app, String mobile, String address, String room, String cost, String img_link) {
+
+
+
+    public userHelper(String app, String mobile, String address, String room, String cost, String description, String img_link) {
         this.app = app;
         Mobile = mobile;
         Address = address;
         Room = room;
         Cost = cost;
+        Description = description;
         Img_link = img_link;
     }
 
@@ -53,6 +57,14 @@ public class userHelper {
         Cost = cost;
     }
 
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
     public String getImg_link() {
         return Img_link;
     }
@@ -60,6 +72,4 @@ public class userHelper {
     public void setImg_link(String img_link) {
         Img_link = img_link;
     }
-
-
 }

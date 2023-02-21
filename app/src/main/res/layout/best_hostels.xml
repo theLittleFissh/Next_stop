@@ -83,13 +83,13 @@
                 android:singleLine="true"
                 android:text="Price"
                 android:textColor="#008000"
-                android:textSize="15sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="৳"
+                android:text="৳/Per Seat"
                 android:textColor="#008000"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -113,7 +113,13 @@
             android:maxLines="0"
             android:id="@+id/best_hostels_contact"
             />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:maxLines="0"
+            android:id="@+id/best_hostels_details"
+            />
 
 
 

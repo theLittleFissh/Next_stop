@@ -1,19 +1,10 @@
 package com.example.nextstop;
 
-import static android.text.TextUtils.isEmpty;
-
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,34 +15,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
+import com.example.nextstop.models.userHelper;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.io.InputStream;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AgentHome extends AppCompatActivity {
 
-    EditText app,mobile,address,room,cost;
+    EditText app,mobile,address,room,cost,description;
     Button submit;
 
     ImageView imgupl;
@@ -62,6 +45,7 @@ public class AgentHome extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     private UploadTask.TaskSnapshot taskSnapshot;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +57,9 @@ public class AgentHome extends AppCompatActivity {
         cost = findViewById(R.id.price);
         submit =(Button) findViewById(R.id.submitbtn);
         room=findViewById(R.id.roomavailable);
+        description=findViewById(R.id.hostel_descriptions);
         imgupl = findViewById(R.id.Viewimage);
+
 
 
         imgupl.setOnClickListener(new View.OnClickListener() {
@@ -113,12 +99,27 @@ public class AgentHome extends AppCompatActivity {
                     public void onClick(View v) {
 //                        uploadtofirebase();
 
-                        String App,Mobile,Address,Room,Cost;
+                        String App,Mobile,Address,Room,Cost,Description;
                         App = app.getText().toString();
                         Mobile = mobile.getText().toString();
                         Address = address.getText().toString();
                         Room = room.getText().toString();
                         Cost = cost.getText().toString();
+                        Description=description.getText().toString();
+
+
+                        //regx
+
+
+                        String phoneRegex = "^(?:\\+88|88)?01[3-9]\\d{8}$";
+                        Pattern pattern = Pattern.compile(phoneRegex);
+                        Matcher matcher = pattern.matcher(Mobile);
+
+
+
+
+                        //regx sesh
+
 
 
                         if(imageUri == null){
@@ -141,6 +142,17 @@ public class AgentHome extends AppCompatActivity {
                             alert11.show();
 
                         }
+
+                        else if (!matcher.matches()) {
+                            // Not a valid number
+                            mobile.setError("Not a valid number");
+                            mobile.requestFocus();
+                        }
+//                        else if(matcher.matches()) {
+//                            // Valid number
+//                            Toast.makeText(AgentHome.this, "Valid", Toast.LENGTH_LONG).show();
+//                        }
+
                         else{
 
 
@@ -157,7 +169,7 @@ public class AgentHome extends AppCompatActivity {
                                                 public void onSuccess(Uri uri) {
                                                     FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
                                                     DatabaseReference root = rootNode.getReference("User");
-                                                    userHelper helper = new userHelper(App,Mobile,Address,Room,Cost,uri.toString());
+                                                    userHelper helper = new userHelper(App,Mobile,Address,Room,Cost,Description,uri.toString());
 
                                                     root.child(app.getText().toString()).setValue(helper);
 
@@ -166,6 +178,7 @@ public class AgentHome extends AppCompatActivity {
                                                     address.setText("");
                                                     room.setText("");
                                                     cost.setText("");
+                                                    description.setText("");
                                                     imgupl.setImageResource(R.drawable.imageup);
                                                     Toast.makeText(AgentHome.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
                                                 }

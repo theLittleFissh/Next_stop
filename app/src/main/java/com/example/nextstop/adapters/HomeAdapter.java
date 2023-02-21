@@ -89,6 +89,7 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel,HomeAdapter.m
         holder.rooms.setText(model.getRoom());
         holder.address.setText(model.getAddress());
         holder.mobile.setText(model.getMobile());
+        holder.description.setText(model.getDescription());
 
 
         Glide.with(holder.img.getContext())
@@ -109,6 +110,7 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel,HomeAdapter.m
                 intent.putExtra("address", model.getAddress());
                 intent.putExtra("mobile", model.getMobile());
                 intent.putExtra("pic", model.getImg_link());
+                intent.putExtra("description",model.getDescription());
                 view.getContext().startActivity(intent);
 
             }
@@ -129,7 +131,7 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel,HomeAdapter.m
     class myViewHolder extends RecyclerView.ViewHolder{
 
         RoundedImageView img;
-        TextView name,address,price,rooms,mobile;
+        TextView name,address,price,rooms,mobile,description;
         CardView click_card;
         View viewLayout;
 
@@ -141,6 +143,7 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel,HomeAdapter.m
             rooms=(TextView) itemView.findViewById(R.id.best_hostels_room);
             address=(TextView) itemView.findViewById(R.id.best_hostels_address);
             mobile=(TextView) itemView.findViewById(R.id.best_hostels_contact);
+            description=(TextView)itemView.findViewById(R.id.best_hostels_details);
             click_card=itemView.findViewById(R.id.UserHostelCardclick);
 
             viewLayout=(View)itemView.findViewById(R.id.clickable_recyclerView);

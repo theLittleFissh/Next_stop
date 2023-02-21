@@ -1,7 +1,7 @@
 package com.example.nextstop.models;
 
 public class HomeModel {
-    String app, Address, Cost, Room, Mobile, img_link;
+    String app, Address, Cost, Room, Mobile, img_link,Description;
 
     HomeModel() {
 
@@ -9,13 +9,14 @@ public class HomeModel {
     }
 
 
-    public HomeModel(String app, String address, String cost, String room, String mobile, String img_link) {
+    public HomeModel(String app, String address, String cost, String room, String mobile, String img_link, String description) {
         this.app = app;
         Address = address;
         Cost = cost;
         Room = room;
         Mobile = mobile;
         this.img_link = img_link;
+        Description = description;
     }
 
     public String getApp() {
@@ -64,5 +65,13 @@ public class HomeModel {
 
     public void setImg_link(String img_link) {
         this.img_link = img_link;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 }

@@ -7,8 +7,14 @@
     tools:context=".user_profileAND_more">
 
 
+    <Button
+        android:layout_width="179dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:text="LOG OUT"
+        android:layout_margin="100dp"
 
-
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
