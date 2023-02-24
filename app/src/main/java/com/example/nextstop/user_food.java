@@ -11,10 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.nextstop.adapters.FoodAdapter;
-import com.example.nextstop.adapters.HomeAdapter;
+import com.example.nextstop.models.adapters.FoodAdapter;
 import com.example.nextstop.models.FoodModel;
-import com.example.nextstop.models.HomeModel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 

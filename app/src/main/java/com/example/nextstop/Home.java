@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.example.nextstop.adapters.HomeAdapter;
+import com.example.nextstop.models.adapters.HomeAdapter;
 import com.example.nextstop.models.HomeModel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;

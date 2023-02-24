@@ -89,6 +89,9 @@ public class AgentHome extends AppCompatActivity {
 
                         Intent intent =  new Intent(Intent.ACTION_PICK);
                         intent.setType("image/*");
+//                        //new code
+//                        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
+//                        //
                         startActivityForResult(Intent.createChooser(intent, "Select Image File"), 1);
 
                     }
@@ -157,7 +160,7 @@ public class AgentHome extends AppCompatActivity {
 
 
                             FirebaseStorage storage = FirebaseStorage.getInstance();
-                            StorageReference uploder = storage.getReference("Image1"+new Random().nextInt(50));
+                            StorageReference uploder = storage.getReference("Image1"+new Random().nextInt(250));//initial=50chilo
 
                             uploder.putFile(imageUri)
                                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -225,91 +228,7 @@ public class AgentHome extends AppCompatActivity {
 
 
 
-//        //Image Upload er kaj ekhane
-//            uploadImage=findViewById(R.id.Uploadimage);
-//
-//        ActivityResultLauncher<Intent>activityResultLauncher=registerForActivityResult(
-//                new ActivityResultContracts.StartActivityForResult(),
-//                new ActivityResultCallback<ActivityResult>() {
-//                    @Override
-//                    public void onActivityResult(ActivityResult result) {
-//                        if(result.getResultCode()== Activity.RESULT_OK){
-//                            Intent data = result.getData();
-//                            uri=data.getData();
-//                            uploadImage.setImageURI(uri);
-//                        }
-//                        else{
-//                            Toast.makeText(AgentHome.this, "No Image Selected", Toast.LENGTH_SHORT).show();
-//
-//                        }
-//
-//                    }
-//                }
-//        );
-//
-//        uploadImage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent photopicker=new Intent(Intent.ACTION_PICK);
-//                photopicker.setType("image/+");
-//                activityResultLauncher.launch(photopicker);
-//            }
-//        });
-//
 
-        //Image Upload er kaj sesh
-
-
-
-
-
-
-//        submit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//
-//                String App = apartment.getText().toString();
-//                String Mobile = mobileNumber.getText().toString();
-//                String Address = address.getText().toString();
-//                String Room = room.getText().toString();
-//                String Cost = cost.getText().toString();
-//
-//
-//                if (isEmpty(App)) {
-//                    apartment.setError("This Field Cannot be Empty");
-//                    apartment.requestFocus();
-//                } else if (isEmpty(Mobile)) {
-//                    mobileNumber.setError("This Field Cannot be Empty");
-//                    mobileNumber.requestFocus();
-//                } else if (isEmpty(Address)) {
-//                    address.setError("This Field Cannot be Empty");
-//                    address.requestFocus();
-//                } else if (isEmpty(Room)) {
-//                    room.setError("This Field Cannot be Empty");
-//                    room.requestFocus();
-//                } else if (isEmpty(Cost)) {
-//                    cost.setError("This Field Cannot be Empty");
-//                    cost.requestFocus();
-//                }
-//                else
-//                {
-//
-//
-//                    firebaseDatabase=FirebaseDatabase.getInstance();
-//                    DatabaseReference root=firebaseDatabase.getReference("User");
-//                    userHelper helper=new userHelper(App,Mobile,Address,Room,Cost);
-//                    root.child(App).setValue(helper);
-//                    Toast.makeText(AgentHome.this, "Succefully Inserted", Toast.LENGTH_SHORT).show();
-//                    finish();
-//                }
-//
-//
-//            }
-//
-//
-//        });
     }
 
 
@@ -341,69 +260,7 @@ public class AgentHome extends AppCompatActivity {
 
         }
     }
-//    private void uploadtofirebase()
-//    {
-//        final ProgressDialog dialog=new ProgressDialog(this);
-//        dialog.setTitle("File Uploader");
-//        dialog.show();
-//
-//            //declare again
-//            app=(EditText)findViewById(R.id.apartName);
-//            mobile=(EditText) findViewById(R.id.contactNumber);
-//            address=(EditText) findViewById(R.id.address);
-//            cost=(EditText)findViewById(R.id.price);
-//            room=(EditText)findViewById(R.id.roomavailable);
-//
-////            FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-////            DatabaseReference root=firebaseDatabase.getReference();
-//
-//            FirebaseStorage storage=FirebaseStorage.getInstance();
-//            StorageReference uploader=storage.getReference("Image1"+new Random().nextInt(200));
-//
-//
-//            uploader.putFile(filepath)
-//                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot)
-//                        {
-//                            uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                                @Override
-//                                public void onSuccess(Uri uri) {
-//                                    dialog.dismiss();
-//                                    FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-//                                    DatabaseReference root=firebaseDatabase.getReference("User");
-//
-//                                    userHelper userhelper=new userHelper(app.getText().toString()
-//                                            ,mobile.getText().toString()
-//                                            ,address.getText().toString()
-//                                            ,room.getText().toString()
-//                                            ,cost.getText().toString(),
-//                                                uri.toString());
-//
-//                                            root.child(app.getText().toString()).setValue(userhelper);
-//
-//                                            app.setText("");
-//                                            mobile.setText("");
-//                                            address.setText("");
-//                                            room.setText("");
-//                                            cost.setText("");
-//                                            img.setImageResource(R.drawable.imageup);
-//                                    Toast.makeText(AgentHome.this, "Uploaded", Toast.LENGTH_SHORT).show();
-//
-//                                }
-//                            });
-//                        }
-//                    })
-//                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot)
-//                        {
-//                            float percent=(100*taskSnapshot.getBytesTransferred())/taskSnapshot.getTotalByteCount();
-//                            dialog.setMessage("Uploaded :"+(int)percent+" %");
-//                        }
-//                    });
-//
-//    }
+
 
 }
 //last bracket

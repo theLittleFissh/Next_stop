@@ -10,10 +10,14 @@
     <Button
         android:layout_width="179dp"
         android:layout_height="65dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="100dp"
         android:gravity="center"
         android:text="LOG OUT"
-        android:layout_margin="100dp"
-
+        android:id="@+id/logoutButton"
         />
 
     <LinearLayout

@@ -27,7 +27,7 @@ public class Payment_Proces extends AppCompatActivity {
     private boolean otpSent=false;
     private String countryCode="+880";
     private String id="";
-    Button sendOtp;
+
 
 
     @SuppressLint("WrongViewCast")
@@ -37,7 +37,8 @@ public class Payment_Proces extends AppCompatActivity {
         setContentView(R.layout.activity_payment_proces);
         final EditText mobileNumber=findViewById(R.id.bkash_Number);
         final EditText otp=findViewById(R.id.bkash_otp);
-        sendOtp=findViewById(R.id.bkash_otp);
+        final Button sendOtp=findViewById(R.id.bkash_sendotp);
+
 
         FirebaseApp.initializeApp(this);
         FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();

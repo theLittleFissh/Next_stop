@@ -1,16 +1,12 @@
-package com.example.nextstop.adapters;
+package com.example.nextstop.models.adapters;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,10 +17,6 @@ import com.example.nextstop.models.HomeModel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.makeramen.roundedimageview.RoundedImageView;
-
-import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel,HomeAdapter.myViewHolder> {
 //public class HomeAdapter extends RecyclerView.Adapter<MyViewHolder> {

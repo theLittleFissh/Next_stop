@@ -1,4 +1,4 @@
-package com.example.nextstop.adapters;
+package com.example.nextstop.models.adapters;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -11,16 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nextstop.R;
 import com.example.nextstop.models.BookingInfo;
-import com.example.nextstop.models.HomeModel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
-import com.makeramen.roundedimageview.RoundedImageView;
 
 public class BookingAdapter extends FirebaseRecyclerAdapter<BookingInfo,BookingAdapter.myViewHolder> {
 

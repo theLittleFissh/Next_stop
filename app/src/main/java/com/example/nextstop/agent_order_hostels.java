@@ -10,7 +10,7 @@ import android.view.View;
 
 public class agent_order_hostels extends AppCompatActivity {
 
-    CardView hostelbooking;
+    CardView hostelbooking,foodOrder;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -19,6 +19,7 @@ public class agent_order_hostels extends AppCompatActivity {
         setContentView(R.layout.activity_agent_order_hostels);
 
 
+        foodOrder=findViewById(R.id.food_order_cardclick);
         hostelbooking=findViewById(R.id.hostel_order_cardclick);
         hostelbooking.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,5 +29,15 @@ public class agent_order_hostels extends AppCompatActivity {
                 finish();
             }
         });
+
+        foodOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(agent_order_hostels.this,Payment_Proces.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 }

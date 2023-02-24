@@ -15,6 +15,7 @@ android:background="@drawable/selectoptions"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         app:cardCornerRadius="10dp"
+        android:id="@+id/food_order_cardclick"
         >
 
         <ImageView

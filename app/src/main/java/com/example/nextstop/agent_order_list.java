@@ -6,10 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.nextstop.adapters.BookingAdapter;
-import com.example.nextstop.adapters.HomeAdapter;
+import com.example.nextstop.models.adapters.BookingAdapter;
 import com.example.nextstop.models.BookingInfo;
-import com.example.nextstop.models.HomeModel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 

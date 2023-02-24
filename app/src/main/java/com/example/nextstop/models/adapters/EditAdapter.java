@@ -1,4 +1,4 @@
-package com.example.nextstop.adapters;
+package com.example.nextstop.models.adapters;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
