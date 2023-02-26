@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1072796048870",
+    "firebase_url": "https://nextstop-e12fc-default-rtdb.firebaseio.com",
     "project_id": "nextstop-e12fc",
     "storage_bucket": "nextstop-e12fc.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1072796048870-b6uadi0otbllcen6nd6bh99of7oss4re.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nextstop",
+            "certificate_hash": "657b5db02d824bad04fd0168af2ea6e0b8547731"
+          }
+        },
         {
           "client_id": "1072796048870-dpuvdgjfjcsth714sgifu0944jjmbb4r.apps.googleusercontent.com",
           "client_type": 3

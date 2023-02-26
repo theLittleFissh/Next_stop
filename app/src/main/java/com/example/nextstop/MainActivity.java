@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
 
 
+
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         agentErsignup=findViewById(R.id.agentersignup);
         userlay=findViewById(R.id.userlayout);
         agentlay=findViewById(R.id.agent_ersignupid);
+
+
+
+
 
 
 
@@ -145,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                     else {
+
+
                         progressDialog.show();
                         firebaseAuth.signInWithEmailAndPassword(mail, pass)
                                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -163,6 +172,9 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                                     }
                                 });
+
+
+
                     }
                 }
             });
@@ -272,7 +284,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-    }
+
+
+}
 
 
 

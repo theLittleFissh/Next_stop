@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,10 +25,11 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class Payment_Proces extends AppCompatActivity {
-    private boolean otpSent=false;
-    private String countryCode="+880";
-    private String id="";
 
+    Button sendOtp,reciceotp;
+    private String verificationId;
+    FirebaseAuth mAuth;
+    EditText otp,mobileNumber;
 
 
     @SuppressLint("WrongViewCast")
@@ -35,76 +37,111 @@ public class Payment_Proces extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_proces);
-        final EditText mobileNumber=findViewById(R.id.bkash_Number);
-        final EditText otp=findViewById(R.id.bkash_otp);
-        final Button sendOtp=findViewById(R.id.bkash_sendotp);
+        mobileNumber=findViewById(R.id.bkash_Number);
+        otp=findViewById(R.id.bkash_otp);
+        sendOtp=findViewById(R.id.bkash_sendotp);
+        reciceotp = findViewById(R.id.rec_otp);
 
-
-        FirebaseApp.initializeApp(this);
-        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
 
 
         sendOtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(otpSent){
-                    final String getOTP=otp.getText().toString();
+                mAuth = FirebaseAuth.getInstance();
+                String number = mobileNumber.getText().toString();
+                String phoneNumber = "+88"+number;
 
-                    if(id.isEmpty()){
+                sendVerificationCode(phoneNumber);
+                mobileNumber.setVisibility(View.GONE);
+                sendOtp.setVisibility(View.GONE);
+                otp.setVisibility(View.VISIBLE);
+                reciceotp.setVisibility(View.VISIBLE);
+            }
+        });
 
-                        Toast.makeText(Payment_Proces.this, "Unable to Payment", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        PhoneAuthCredential credential= PhoneAuthProvider.getCredential(id,getOTP);
-                        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    FirebaseUser userDetails=task.getResult().getUser();
-                                    Toast.makeText(Payment_Proces.this, "Payment Done", Toast.LENGTH_SHORT).show();
-                                }
-                                else{
-                                    Toast.makeText(Payment_Proces.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
 
-                    }
+        reciceotp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                String code = otp.getText().toString().trim();
+
+                if (code.isEmpty() || code.length() < 6) {
+
+                    otp.setError("Enter code...");
+                    otp.requestFocus();
+                    return;
                 }
-                else{
-                    final String getMobile=mobileNumber.getText().toString();
-
-                    PhoneAuthOptions options= PhoneAuthOptions.newBuilder(firebaseAuth)
-                            .setPhoneNumber(countryCode+""+getMobile)
-                            .setTimeout(60L, TimeUnit.SECONDS)
-                            .setActivity(Payment_Proces.this)
-                            .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                                @Override
-                                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                    Toast.makeText(Payment_Proces.this, "OTP SENT", Toast.LENGTH_SHORT).show();
-                                }
-
-                                @Override
-                                public void onVerificationFailed(@NonNull FirebaseException e) {
-                                    Toast.makeText(Payment_Proces.this, "Something Went Worng"+e.getMessage(), Toast.LENGTH_SHORT).show();
-                                }
-
-                                @Override
-                                public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                                    super.onCodeSent(s, forceResendingToken);
-                                    otp.setVisibility(View.VISIBLE);
-                                    sendOtp.setText("Verify OTP");
-                                    id=s;
-                                    otpSent=true;
-                                }
-                            }).build();
-
-                    PhoneAuthProvider.verifyPhoneNumber(options);
-                }
-
+                verifyCode(code);
             }
         });
 
     }
+
+
+
+    // phone auth
+    private void verifyCode(String code) {
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
+        signInWithCredential(credential);
+    }
+
+    private void signInWithCredential(PhoneAuthCredential credential) {
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+
+                            Toast.makeText(Payment_Proces.this, "Paymnet done", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(Payment_Proces.this,user_food.class);
+                            startActivity(intent);
+
+                        } else {
+                            Toast.makeText(Payment_Proces.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+//                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
+    }
+
+
+    private void sendVerificationCode(String phoneNumber) {
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                phoneNumber,
+                60L,
+                TimeUnit.SECONDS,
+                Payment_Proces.this,
+                mCallBack
+        );
+
+    }
+
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
+            mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
+        @Override
+        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+            verificationId = s;
+        }
+
+        @Override
+        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+            String code = phoneAuthCredential.getSmsCode();
+            if (code != null) {
+                otp.setText(code);
+                verifyCode(code);
+            }
+        }
+
+        @Override
+        public void onVerificationFailed(FirebaseException e) {
+            Toast.makeText(Payment_Proces.this, e.getMessage(), Toast.LENGTH_LONG).show();
+//            progressBar.setVisibility(View.GONE);
+        }
+    };
 }
+
+
+

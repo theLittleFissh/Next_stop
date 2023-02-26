@@ -10,6 +10,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:visibility="visible"
         android:layout_width="400dp"
         android:layout_height="300dp"
         android:layout_gravity="center"
@@ -29,6 +30,7 @@
 
 
         <EditText
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Bkash Number"
@@ -56,7 +58,10 @@
             android:id="@+id/bkash_otp"
             />
 
+
+        <!--        1-->
         <Button
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Send OTP"
@@ -65,7 +70,17 @@
             android:id="@+id/bkash_sendotp"
 
             />
+        <!--         2-->
+        <Button
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify OTP"
+            android:layout_gravity="center"
+            android:layout_marginTop="95dp"
+            android:id="@+id/rec_otp"
 
+            />
 
 
 

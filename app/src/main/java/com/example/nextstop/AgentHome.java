@@ -65,33 +65,11 @@ public class AgentHome extends AppCompatActivity {
         imgupl.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        Dexter.withActivity(AgentHome.this)
-//                                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-//                                .withListener(new PermissionListener() {
-//                                    @Override
-//                                    public void onPermissionGranted(PermissionGrantedResponse response)
-//                                    {
-//                                        Intent intent =new Intent(Intent.ACTION_PICK);
-//                                        intent.setType("image/*");
-//                                        startActivityForResult(Intent.createChooser(intent,"select Image File"),1);
-//                                    }
-//
-//                                    @Override
-//                                    public void onPermissionDenied(PermissionDeniedResponse response) {
-//
-//                                    }
-//
-//                                    @Override
-//                                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-//                                        token.continuePermissionRequest();
-//                                    }
-//                                }).check();
+
 
                         Intent intent =  new Intent(Intent.ACTION_PICK);
                         intent.setType("image/*");
-//                        //new code
-//                        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
-//                        //
+
                         startActivityForResult(Intent.createChooser(intent, "Select Image File"), 1);
 
                     }

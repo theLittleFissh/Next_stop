@@ -32,14 +32,14 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-database:20.1.0'
     implementation 'com.google.firebase:firebase-database:20.1.0'
     implementation 'com.google.firebase:firebase-auth:21.1.0'
-    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+    implementation 'com.google.firebase:firebase-firestore:24.4.3'
     implementation 'com.google.firebase:firebase-storage:20.1.0'
 
     implementation 'com.karumi:dexter:6.0.2'
@@ -49,8 +49,8 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:7.1.1'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
 
     //for rounded image view
@@ -65,9 +65,7 @@ dependencies {
     //dialogplus
     implementation 'com.orhanobut:dialogplus:1.11@aar'
 
-    //country code
 
-    implementation 'com.hbb20:ccp:X.Y.Z'
 
 
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -20,6 +21,15 @@ public class Home extends AppCompatActivity {
     HomeAdapter homeAdapter;
     LinearLayout foodButton,moreButton,homebutton;
 
+    //shared preference
+
+    SharedPreferences sharedPreferences;
+    private static final String shared_pref_name="mypref";
+    private static final String key_email="mail";
+    private static final String key_pass="pass";
+    //shared preference
+
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +39,10 @@ public class Home extends AppCompatActivity {
         foodButton=findViewById(R.id.userfoodbutton);
         moreButton=findViewById(R.id.usermorebutton);
         homebutton=findViewById(R.id.userhomebutton);
+
+        //shared
+
+        sharedPreferences=getSharedPreferences(shared_pref_name,MODE_PRIVATE);
 
         //switching er kaj
 
