@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:visibility="visible"
         android:layout_width="400dp"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
@@ -20,67 +20,96 @@
         app:cardCornerRadius="25dp"
         app:cardElevation="15dp"
         app:cardUseCompatPadding="true">
-        <ImageView
-            android:layout_width="95dp"
-            android:layout_height="85dp"
-            android:layout_margin="15dp"
-            android:src="@drawable/bkashlogo"
-            android:layout_gravity="center_horizontal"
-            />
-
-
-        <EditText
-            android:visibility="visible"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Bkash Number"
-            android:layout_marginStart="10dp"
-            android:drawableStart="@drawable/payment"
-            android:drawablePadding="10dp"
-            android:inputType="phone"
-            android:maxLines="1"
-            android:layout_gravity="center"
-            android:id="@+id/bkash_Number"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="85dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/bkashlogo"
+                android:layout_gravity="center_horizontal"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Amount : "
+                    android:textSize="25sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="255 Taka"
+                    android:textSize="25sp"
+                    android:id="@+id/bkashAmount"
+                    />
 
-        <EditText
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="OTP"
-            android:layout_marginTop="55dp"
-            android:layout_marginStart="10dp"
-            android:drawableStart="@drawable/payment"
-            android:drawablePadding="10dp"
-            android:inputType="phone"
-            android:maxLines="1"
-            android:layout_gravity="center"
-            android:id="@+id/bkash_otp"
-            />
+            </LinearLayout>
 
 
-        <!--        1-->
-        <Button
-            android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Send OTP"
-            android:layout_gravity="center"
-            android:layout_marginTop="95dp"
-            android:id="@+id/bkash_sendotp"
+            <EditText
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bkash Number"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/payment"
+                android:drawablePadding="10dp"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:layout_gravity="center"
+                android:id="@+id/bkash_Number"
+                />
 
-            />
-        <!--         2-->
-        <Button
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Verify OTP"
-            android:layout_gravity="center"
-            android:layout_marginTop="95dp"
-            android:id="@+id/rec_otp"
+            <EditText
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="OTP"
+                android:layout_marginTop="55dp"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/payment"
+                android:drawablePadding="10dp"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:layout_gravity="center"
+                android:id="@+id/bkash_otp"
+                />
 
-            />
+
+            <!--        1-->
+            <Button
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send OTP"
+                android:layout_gravity="center"
+                android:layout_marginTop="95dp"
+                android:id="@+id/bkash_sendotp"
+
+                />
+            <!--         2-->
+            <Button
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verify OTP"
+                android:layout_gravity="center"
+                android:layout_marginTop="95dp"
+                android:id="@+id/rec_otp"
+
+                />
+
+
+        </LinearLayout>
 
 
 

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,7 @@ public class Payment_Proces extends AppCompatActivity {
     private String verificationId;
     FirebaseAuth mAuth;
     EditText otp,mobileNumber;
+    TextView total;
 
 
     @SuppressLint("WrongViewCast")
@@ -41,6 +43,10 @@ public class Payment_Proces extends AppCompatActivity {
         otp=findViewById(R.id.bkash_otp);
         sendOtp=findViewById(R.id.bkash_sendotp);
         reciceotp = findViewById(R.id.rec_otp);
+        total=findViewById(R.id.bkashAmount);
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 package com.example.nextstop;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,10 +12,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.nextstop.models.BookingInfo;
+import com.example.nextstop.models.FoodOrderInfo;
 import com.example.nextstop.models.adapters.FoodAdapter;
 import com.example.nextstop.models.FoodModel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class user_food extends AppCompatActivity {
 
@@ -28,7 +37,9 @@ public class user_food extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_food);
-        order=findViewById(R.id.user_food_order);
+
+
+
 
 
 
@@ -53,6 +64,9 @@ public class user_food extends AppCompatActivity {
                 finish();
             }
         });
+
+
+//
         //switching er kaj sesh
 
         recyclerView =(RecyclerView) findViewById(R.id.food_RV3);

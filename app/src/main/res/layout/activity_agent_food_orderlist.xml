@@ -4,14 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".agent_order_list"
-    android:background="@drawable/orderlistbg"
+    tools:context=".agentFoodOrderlist"
+    android:background="@drawable/agentfoodorderdesign"
+    android:orientation="vertical"
     >
+
+
+
+    <ImageView
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        android:src="@drawable/backbutton"
+        android:layout_margin="5dp"
+        android:id="@+id/backButton1"
+        />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/order_list"
+        android:id="@+id/food_order_list"
+
         />
+
+
+
+
+
 
 </LinearLayout>

@@ -20,6 +20,7 @@
         android:elevation="3dp"
         android:id="@+id/hostel_card"
 
+
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,7 +59,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Add Your ADVERTISEMENT"
-
                     android:layout_marginLeft="10dp"
                     />
 
@@ -270,19 +270,18 @@
                     >
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="59dp"
                         android:layout_height="wrap_content"
-                        android:text="Profile"
-                        android:textSize="14sp"
-                        android:textColor="@color/pinkcolor"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="6dp"
                         android:fontFamily="serif"
-                        />
+                        android:text="History"
+                        android:textColor="@color/pinkcolor"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="See YourSelf"
+                        android:text="See Your Activity"
                         android:textColor="@color/black"
                         android:layout_marginLeft="10dp"
                         android:textSize="10sp"

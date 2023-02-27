@@ -32,7 +32,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,6 +41,7 @@
             android:text="Room Available: "
             android:textSize="20sp"
             android:textStyle="bold"
+
             />
         <TextView
             android:layout_width="wrap_content"
@@ -154,7 +156,6 @@
                 android:textStyle="bold"
                 android:layout_alignParentBottom="true"
                 android:id="@+id/bookBtn"
-
 
                 />
 
